@@ -9,12 +9,12 @@
 
     <EditText
         android:id="@+id/engToMorText"
-        android:layout_width="360dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="150dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="What do you want to stransfer into Morse?"
+        android:text="Input here"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
