@@ -37,4 +37,19 @@ class EngToMor : Fragment() {
         return view
     }
 
+    /**
+     * This fun translate English to Morse Code
+     */
+    private fun engTransToMor(english: String): String{
+        var morse = ""
+        var delimiter = ""
+        val engList = english.split(delimiter)
+        for (letter in engList){
+            if (engToMorHashMap.containsKey(letter)){
+                morse += engToMorHashMap.get(letter)
+            }
+        }
+        return morse
+    }
+
 }

@@ -78,7 +78,7 @@ class MorToEng : Fragment() {
         var transText = ""
         val morseCode = morse.split(delimiter)
         for (code in morseCode){
-            if (code != "" || code!= " " || code!= null){
+            if (code != "" && code!= " " && code!= null){
                 var toEng = morToEngHashMap.get(code)
                 if ( toEng != null){
                     transText += toEng
