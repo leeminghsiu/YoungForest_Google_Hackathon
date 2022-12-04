@@ -5,13 +5,15 @@ import android.os.Bundle
 import android.widget.TableRow
 import androidx.viewpager.widget.ViewPager
 import com.example.young_forest.Adapter.MyAdapter
+import com.example.young_forest.Fragments.OnDataPasser
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayout.TabView
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), OnDataPasser {
 
     private lateinit var tabView: TabLayout
     private lateinit var viewPager: ViewPager
+    lateinit var nums: IntArray
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,5 +42,9 @@ class MainActivity : AppCompatActivity() {
             }
 
         })
+    }
+
+    override fun onDataPasser(data: IntArray) {
+        nums = data
     }
 }
