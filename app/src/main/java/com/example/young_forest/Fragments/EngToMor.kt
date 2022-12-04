@@ -78,8 +78,8 @@ class EngToMor : Fragment() {
         }
 
         view.findViewById<Button>(R.id.flashlight).setOnClickListener {
-            var nums = morToNums(morse)
-            dataPasser.onDataPasser(nums)
+            val intent = Intent(this.requireContext(), FlashActivity::class.java)
+            startActivity(intent)
         }
 
         return view

@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.util.Log
 import android.view.View
+import android.widget.Button
 import android.widget.ImageButton
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
@@ -15,14 +16,14 @@ import androidx.appcompat.app.AppCompatActivity
 class FlashActivity : AppCompatActivity() {
     private val mHandler: Handler = Handler()
     private lateinit var cameraM: CameraManager
-    private lateinit var powerBtn: ImageButton
+    private lateinit var powerBtn: Button
     var isFlash = false
     @SuppressLint("MissingInflatedId")
     @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        powerBtn = findViewById(R.id.flashlight )
+        setContentView(R.layout.activity_flashlight)
+        powerBtn = findViewById(R.id.torch)
         cameraM = getSystemService(Context.CAMERA_SERVICE) as CameraManager
         powerBtn.setOnClickListener{buttonClicked(it)}
     }
