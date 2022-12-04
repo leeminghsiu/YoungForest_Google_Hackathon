@@ -47,9 +47,8 @@ class FlashActivity : AppCompatActivity() {
         powerBtn = findViewById(R.id.torch)
         cameraM = getSystemService(Context.CAMERA_SERVICE) as CameraManager
         var input: EditText = findViewById(R.id.input)
-        var ori_input = input.text.toString()
-        var nums = morToNums(engTransToMor(ori_input))
-        powerBtn.setOnClickListener{buttonClicked(it, nums)}
+
+        powerBtn.setOnClickListener{buttonClicked(it, morToNums(engTransToMor(input.text.toString())))}
     }
 
     @RequiresApi(Build.VERSION_CODES.M)
@@ -80,7 +79,7 @@ class FlashActivity : AppCompatActivity() {
                 morse += (engToMorHashMap.get(letter) + " ")
             }
         }
-        Log.i("i", morse)
+        Log.i("i", "engToMor: " + morse)
         return morse
     }
 
@@ -92,7 +91,7 @@ class FlashActivity : AppCompatActivity() {
         for (cha in mor_list){
             if(morToNumHashMap.containsKey(cha)){
                 nums.set(num, morToNumHashMap.get(cha)!!)
-                Log.i("i", morToNumHashMap.get(cha).toString())
+                Log.i("i", "morTONums:" + morToNumHashMap.get(cha).toString())
                 num ++
             }
         }
@@ -104,7 +103,7 @@ class FlashActivity : AppCompatActivity() {
         val runnable: Runnable = object : Runnable {
             @RequiresApi(Build.VERSION_CODES.M)
             override fun run() {
-                Log.i("i", nums.toString())
+                Log.i("i", "107 final" + nums.toString())
                 for(i in 1..3){
                     for (sec in nums) {
                         if (sec == 0) {
