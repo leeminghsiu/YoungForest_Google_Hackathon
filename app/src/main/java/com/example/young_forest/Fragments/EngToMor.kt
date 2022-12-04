@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.young_forest.R
+import com.example.young_forest.FlashActivity
 
 
 class EngToMor : Fragment() {
@@ -33,7 +34,6 @@ class EngToMor : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_eng_to_mor, container, false)
-
         return view
     }
 
